@@ -57,6 +57,8 @@ typedef struct {
 // Function prototypes
 ///////////////////////////////////////////////////////////////////////////////
 
+void configureTIM16();
 
+void setPWM(int frequency, int dutyCycle);
 
 #endif

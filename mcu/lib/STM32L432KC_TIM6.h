@@ -45,6 +45,8 @@ typedef struct {
 // Function prototypes
 ///////////////////////////////////////////////////////////////////////////////
 
+void configureTIM6();
 
+void setDelay(int ms);
 
 #endif
