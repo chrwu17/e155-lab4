@@ -121,12 +121,13 @@ const int notes[][2] = {
 {  0,	0}};
 
 int main(void) {
-	configureFlash();
+    configureFlash();
     configureTIM16();
     configureTIM6();
 
     pinMode(6, GPIO_ALT);
-    GPIO->AFRL |= (0b110 << 24);
+    GPIO->AFRL &= ~(0xF << 24);    // Clear bits [27:24] for pin 6
+    GPIO->AFRL |= (14 << 24);      // Set to AF14 for TIM16_CH1
 
     for (int i = 0; i < sizeof(notes)/sizeof(notes[0]); i++){
         setPWM(notes[i][0], 50);

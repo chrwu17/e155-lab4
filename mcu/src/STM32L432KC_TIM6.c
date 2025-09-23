@@ -11,7 +11,7 @@ void configureTIM6() {
     RCC->APB1ENR1 |= (1 << 4);
     
     // Set clock to 1 kHz
-    TIM6->TIM6_PSC = 3999;
+    TIM6->TIM6_PSC = 79999;
 
     // Set the auto-reload preload enable in TIM16_CR1
     TIM6->TIM6_CR1 |= (1 << 7);

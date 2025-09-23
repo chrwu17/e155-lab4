@@ -13,8 +13,8 @@ void configureTIM16() {
     // Enable TIM16
     RCC->APB2ENR |= (1 << 17);
 
-    // Use prescaler to set clock to 100 kHz in TIM16_PSC
-    TIM16->TIM16_PSC = 39;
+    // Use prescaler to set clock to 1 MHz in TIM16_PSC
+    TIM16->TIM16_PSC = 3;
 
     // Set Auto Reload Register in TIM16_ARR
     TIM16->TIM16_ARR = 0xFFFF;
@@ -45,11 +45,14 @@ void configureTIM16() {
 }
 
 void setPWM(int frequency, int dutyCycle) {
+
+    // Set ARR values as a variable
+    uint32_t arr_value = (1000000 / frequency) - 1;
     // Set ARR in TIM16_ARR
-    TIM16->TIM16_ARR = 100000/frequency;
+    TIM16->TIM16_ARR = arr_value;
     
     // Set Duty Cycle in TIM16_CCR1
-    TIM16->TIM16_CCR1 = 100000/frequency * dutyCycle/100;
+    TIM16->TIM16_CCR1 = (arr_value + 1) * dutyCycle/100;
 
     // Set update generation bit in TIM16_EGR
     TIM16->TIM16_EGR |= (1 << 0);
