@@ -122,7 +122,6 @@ const int notes[][2] = {
 
 int main(void) {
 	configureFlash();
-    configureClock();
     configureTIM16();
     configureTIM6();
 

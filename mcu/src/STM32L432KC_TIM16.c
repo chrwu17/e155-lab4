@@ -8,10 +8,10 @@
 void configureTIM16() {
     
     // Set Clock to 4 MHz
+    // Enable GPIO A
     RCC->AHB2ENR |= (1 << 0);
+    // Enable TIM16
     RCC->APB2ENR |= (1 << 17);
-    RCC->CFGR &= ~(0b1111 << 4);
-    RCC->CFGR &= ~(0b111 << 13);
 
     // Use prescaler to set clock to 100 kHz in TIM16_PSC
     TIM16->TIM16_PSC = 39;
@@ -19,29 +19,29 @@ void configureTIM16() {
     // Set Auto Reload Register in TIM16_ARR
     TIM16->TIM16_ARR = 0xFFFF;
 
+    // Set PWM Mode in TIM16_CCMR1
+    TIM16->TIM16_CCMR1 &= ~(0b111 << 4);  // Clear OC1M[6:4] bits
+    TIM16->TIM16_CCMR1 |= (0b110 << 4);   // Set PWM Mode 1 (110)
+    TIM16->TIM16_CCMR1 |= (1 << 3);       // Set OC1PE (preload enable)
+    TIM16->TIM16_CCMR1 &= ~(0b11 << 0);   // Clear CC1S (output mode)
+
     // Set the auto-reload preload enable in TIM16_CR1
     TIM16->TIM16_CR1 |= (1 << 7);
-
-    // Set timer counter enable in TIM16_CR1
-    TIM16->TIM16_CR1 |= (1 << 0);
-
-    // Set main output enable in TIM16_BDTR
-    TIM16->TIM16_BDTR |= (1 << 15);
 
     // Set output enable in TIM16_CCER
     TIM16->TIM16_CCER |= (1 << 0);
 
+    // Set main output enable in TIM16_BDTR
+    TIM16->TIM16_BDTR |= (1 << 15);
+
     // Set Capture/compare register in TIM16_CCR1
     TIM16->TIM16_CCR1 = 0;
 
-    // Set PWM Mode in TIM16_CCMR1
-    TIM16->TIM16_CCMR1 |= (1 << 3);
-    TIM16->TIM16_CCMR1 |= (1 << 5);
-    TIM16->TIM16_CCMR1 |= (1 << 6);
-    TIM16->TIM16_CCMR1 &= ~(0b11 << 0);
-
     // Set update generation bit in TIM16_EGR
     TIM16->TIM16_EGR |= (1 << 0);
+
+    // Set timer counter enable in TIM16_CR1
+    TIM16->TIM16_CR1 |= (1 << 0);
 }
 
 void setPWM(int frequency, int dutyCycle) {
