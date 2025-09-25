@@ -38,12 +38,12 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="4" y="129" useTextEdit="1" path="../mcu/src/main.c" left="0" top="109" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="29" y="132" useTextEdit="1" path="../mcu/src/main.c" left="0" top="101" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="20" y="18" useTextEdit="1" path="../mcu/src/STM32L432KC_GPIO.c" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../mcu/src/STM32L432KC_FLASH.c" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../mcu/src/STM32L432KC_RCC.c" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="31" y="57" useTextEdit="1" path="../mcu/src/STM32L432KC_TIM16.c" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="27" y="30" useTextEdit="1" path="../mcu/src/STM32L432KC_TIM6.c" left="0" selected="1" top="18" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../mcu/src/STM32L432KC_RCC.c" left="0" top="48" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="45" y="63" useTextEdit="1" path="../mcu/src/STM32L432KC_TIM16.c" left="0" selected="1" top="41" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="27" y="30" useTextEdit="1" path="../mcu/src/STM32L432KC_TIM6.c" left="0" top="9" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="lab4_cw" fileDialogDefaultFilter="*" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/chris/OneDrive/Desktop/e155-lab4/mcu/src" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>
