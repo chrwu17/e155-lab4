@@ -46,15 +46,8 @@ void configureTIM16() {
 
 void setPWM(int frequency, int dutyCycle) {
 
-    if (frequency == 0) {
-      TIM16->TIM16_CCER &= ~(1 << 0);
-      TIM16->TIM16_CCR1 = 0;
-      return;
-      }
-
     // Set ARR values as a variable
     uint32_t arr_value = (1000000 / frequency) - 1;
-
     // Set ARR in TIM16_ARR
     TIM16->TIM16_ARR = arr_value;
     
@@ -63,5 +56,4 @@ void setPWM(int frequency, int dutyCycle) {
 
     // Set update generation bit in TIM16_EGR
     TIM16->TIM16_EGR |= (1 << 0);
-
 }

@@ -130,7 +130,7 @@ int main(void) {
     GPIO->AFRL |= (14 << 24);      // Set to AF14 for TIM16_CH1
 
     for (int i = 0; i < sizeof(notes)/sizeof(notes[0]); i++){
-        setPWM(notes[i][0], 50);
+        setPWM(notes[i][0], 25);
         setDelay(notes[i][1]);
     }
 	
