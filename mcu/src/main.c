@@ -120,6 +120,19 @@ const int notes[][2] = {
 {440,	500},
 {  0,	0}};
 
+// Twinkle Twinkle Little Star
+// Pitch in Hz, duration in ms
+const int ttls_notes[][2] = {
+    {262, 125}, {262, 125}, {392, 125}, {392, 125}, {440, 125}, {440, 125}, {392, 250}, // C C G G A A G
+    {349, 125}, {349, 125}, {330, 125}, {330, 125}, {294, 125}, {294, 125}, {262, 250}, // F F E E D D C
+    {392, 125}, {392, 125}, {349, 125}, {349, 125}, {330, 125}, {330, 125}, {294, 250}, // G G F F E E D
+    {392, 125}, {392, 125}, {349, 125}, {349, 125}, {330, 125}, {330, 125}, {294, 250}, // G G F F E E D
+    {262, 125}, {262, 125}, {392, 125}, {392, 125}, {440, 125}, {440, 125}, {392, 250}, // C C G G A A G
+    {349, 125}, {349, 125}, {330, 125}, {330, 125}, {294, 125}, {294, 125}, {262, 500}, // F F E E D D C
+    {0,   0}
+};
+
+
 int main(void) {
     configureFlash();
     configureTIM16();
@@ -133,5 +146,13 @@ int main(void) {
         setPWM(notes[i][0], 25);
         setDelay(notes[i][1]);
     }
+
+    setDelay(3000);
+
+    for (int i = 0; i < sizeof(ttls_notes)/sizeof(ttls_notes[0]); i++){
+        setPWM(ttls_notes[i][0], 25);
+        setDelay(ttls_notes[i][1]);
+    }
+
 	
 }
