@@ -11,7 +11,7 @@ void configureTIM6() {
     RCC->APB1ENR1 |= (1 << 4);
     
     // Set clock to 1 kHz
-    TIM6->TIM6_PSC = 3999;
+    TIM6->TIM6_PSC = 399;
 
     // Set the auto-reload preload enable in TIM16_CR1
     TIM6->TIM6_CR1 |= (1 << 7);
@@ -23,7 +23,7 @@ void configureTIM6() {
 void setDelay(int ms) {
     
     // Set auto-reload registers in TIM6_ARR
-    TIM6->TIM6_ARR = ms - 1;
+    TIM6->TIM6_ARR = 10*ms - 1;
 
     // Set update generation bit in TIM16_EGR
     TIM6->TIM6_EGR |= (1 << 0);
