@@ -2,6 +2,8 @@
 // chrwu@g.hmc.edu
 // 09/19/25
 
+// Code to utilize TIM16 for PWM
+
 #include "../lib/STM32L432KC_TIM16.h"
 #include "../lib/STM32L432KC_RCC.h"
 

@@ -2,6 +2,8 @@
 // chrwu@g.hmc.edu
 // 09/19/25
 
+// Code to utilize TIM6 for delays
+
 #include "../lib/STM32L432KC_TIM6.h"
 #include "../lib/STM32L432KC_RCC.h"
 

@@ -2,6 +2,8 @@
 // chrwu@g.hmc.edu
 // 09/19/25
 
+// Main lab code to program onto MCU
+
 #include "../lib/STM32L432KC_FLASH.h"
 #include "../lib/STM32L432KC_GPIO.h"
 #include "../lib/STM32L432KC_RCC.h"

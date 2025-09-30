@@ -1,3 +1,7 @@
+// Christian Wu
+// chrwu@g.hmc.edu
+// 09/19/25
+
 // Taken from E155 Course Website
 
 // STM32L432KC_GPIO.c
