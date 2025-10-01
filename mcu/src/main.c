@@ -37,7 +37,6 @@ const int ttls_notes[][2] = {
 
 
 int main(void) {
-    configureFlash();
     configureTIM16(); // PWM
     configureTIM6(); // Delay
 
