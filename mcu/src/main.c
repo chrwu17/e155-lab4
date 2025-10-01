@@ -45,9 +45,13 @@ int main(void) {
     GPIO->AFRL |= (14 << 24);      // Set to AF14 for TIM16_CH1
     
     for (int i = 0; i < sizeof(notes)/sizeof(notes[0]); i++){
+        if (notes[i][0] == 0 && notes[i][1] == 0) break;
         setPWM(notes[i][0], 50);
         setDelay(notes[i][1]);
     }
+
+    setPWM(0, 50);
+    setDelay(3000);
 
     for (int i = 0; i < sizeof(ttls_notes)/sizeof(ttls_notes[0]); i++){
         setPWM(ttls_notes[i][0], 50);
